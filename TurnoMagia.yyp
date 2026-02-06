@@ -48,6 +48,7 @@
     {"id":{"name":"obj_controla","path":"objects/obj_controla/obj_controla.yy",},},
     {"id":{"name":"obj_corvo","path":"objects/obj_corvo/obj_corvo.yy",},},
     {"id":{"name":"obj_cura","path":"objects/obj_cura/obj_cura.yy",},},
+    {"id":{"name":"obj_de_teste","path":"objects/obj_de_teste/obj_de_teste.yy",},},
     {"id":{"name":"obj_gosma","path":"objects/obj_gosma/obj_gosma.yy",},},
     {"id":{"name":"obj_lica","path":"objects/obj_lica/obj_lica.yy",},},
     {"id":{"name":"obj_lilli","path":"objects/obj_lilli/obj_lilli.yy",},},
