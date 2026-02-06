@@ -299,7 +299,7 @@ if atual.is_hero
         turnos = limpa_lista(turnos); 
         global.batalha = limpa_lista(global.batalha);
 
-// 🔥 reordena por velocidade 
+// reordena por velocidade 
         turnos = ordena_val(turnos);    
         reseta_turno(global.batalha);
 
@@ -470,15 +470,15 @@ ia_acao = function()
         turnos = limpa_lista(turnos); 
         global.batalha = limpa_lista(global.batalha);
 
-// 🔥 reordena por velocidade 
+// reordena por velocidade 
     turnos = ordena_val(turnos);
     //reseta_turno(global.batalha);
 
-    // 👇 SE TODOS JÁ AGIRAM
+    // SE TODOS JÁ AGIRAM
     //if (global.passei)
     //{
         //round_finalizado = true;
-        //return; // ⛔ impede novo ataque
+        //return; // impede novo ataque
     //}
     
 }
@@ -526,7 +526,7 @@ mudar_alvo = function()
     
     var qtd = array_length(global.inimigo);
 
-    // 🛑 Não existe alvo
+    // Não existe alvo
     if (qtd == 0) {
         alvo_atual = undefined;
         return;

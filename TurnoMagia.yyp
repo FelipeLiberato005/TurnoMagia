@@ -77,7 +77,6 @@
     {"id":{"name":"spr_luce_idle","path":"sprites/spr_luce_idle/spr_luce_idle.yy",},},
     {"id":{"name":"spr_maga_atack","path":"sprites/spr_maga_atack/spr_maga_atack.yy",},},
     {"id":{"name":"spr_player2","path":"sprites/spr_player2/spr_player2.yy",},},
-    {"id":{"name":"spr_quadro_escolhas","path":"sprites/spr_quadro_escolhas/spr_quadro_escolhas.yy",},},
     {"id":{"name":"spr_slime_atack","path":"sprites/spr_slime_atack/spr_slime_atack.yy",},},
     {"id":{"name":"spr_stencil_enemy","path":"sprites/spr_stencil_enemy/spr_stencil_enemy.yy",},},
     {"id":{"name":"spr_stencil","path":"sprites/spr_stencil/spr_stencil.yy",},},
