@@ -194,7 +194,7 @@ var _lica = new cria_personagem(
     240,
     330,
     22,
-    spr_lica_atack,
+    spr_lica_atack_1,
     spr_lica_idle,
     ,
     ,
@@ -263,8 +263,42 @@ array_push(_cavaleiro.tipo_ataques,
 		{nome: "ATK", tipo: "ataque", valor: 0})
 #endregion 
 
+#region Nyah
 
+var nyah = new cria_personagem(
+"Nyah",
+obj_nyah,
+500,
+200,
+12,
+spr_nyah_atack,
+spr_nyah_idle,
+,
+false,
+85
+)
+array_push(nyah.acoes, "ataque")
+array_push(nyah.tipo_ataques, 
+        {nome: "ATK", tipo: "ataque", valor: 0})
+#endregion
 
+#region Lica_ENEMY
+ var lica_enemy = new cria_personagem(
+"lica Evil",
+obj_lica_enemy,
+300,
+150,
+19,
+spr_lica_atack,
+spr_lica_idle_1,
+,
+false,
+78
+)
+array_push(lica_enemy.acoes, "magia")
+array_push(lica_enemy.tipo_ataques,
+            {nome: "ATK", tipo: "ataque", valor: 0})
+#endregion 
 
 global.personagens = [_char1, 
 _char2, 
@@ -274,7 +308,9 @@ _inimigo1,
 _inimigo2,
 _lilli,
 _cavaleiro,
-_lica]
+_lica,
+nyah,
+lica_enemy]
      
 	 
 global.batalha = [
@@ -284,16 +320,17 @@ _char2,
 _char3,
 _luce,
 _inimigo1,
-_inimigo2,
+lica_enemy,
 _cavaleiro,
-_lica
+_lica,
+nyah
 ]
 
 
 
 
 
-global.inimigo = [_inimigo1, _cavaleiro, _inimigo2, _char3]
+global.inimigo = [_inimigo1, _cavaleiro, lica_enemy, _char3, nyah]
 
 //Lista de Herois
 global.herois = [_char1, _luce, _lica, _lilli, _char2]

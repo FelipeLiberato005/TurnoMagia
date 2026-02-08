@@ -394,7 +394,8 @@ desenha_inimigo = function(_lista)
 		
 		if !instance_exists(_info.heroi)
 		{
-			instance_create_layer(_x, _y, layer, _info.heroi)	
+			var inimigo = instance_create_layer(_x, _y, layer, _info.heroi)	
+            inimigo.image_xscale = -1
 		}
 		
 		 
