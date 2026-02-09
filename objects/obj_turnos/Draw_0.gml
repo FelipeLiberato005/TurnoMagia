@@ -1,4 +1,7 @@
 
+
+desenha_quadro_escolhas()
+
 //DESENHA AS AÇÕES DO PLAYER
 //ATAQUE, ITEM...
 if acao_realizada == "escolhendo_acao"
@@ -26,7 +29,7 @@ if global.trava == true
 if global.alvos == true 	vizualiza_alvo()
 
 
-desenha_quadro_escolhas()
+
 
 
 //DESENHA O VALOR DO TURNO, EM QUE TURNO O JOGO ESTÁ

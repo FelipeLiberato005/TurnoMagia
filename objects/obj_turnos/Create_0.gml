@@ -115,34 +115,41 @@ acao_atual = 0
 //DESESENHA AS AÇÕES QUE O JOGADOR PODERÁ FAZER, NA TELA. TIRADO DA LISTA DE AÇÕES
 desenha_acoes = function()
 {
+        var info = turnos[0]
 		draw_set_font(fnt_herois)
 		
+    
 		var _qtd = array_length(lista_acoes)
 		for(var i = 0; i < _qtd;i++)
 		{
 		var _cor = c_white
 		var _marg = 0
 		//Definindo posicão
-		
+		var _x = 0
+        var _y = 0
+            
 		if acao_atual == i
 		{
 			_cor = c_red	
-			_marg = -5
+			_marg = 5
 		}
 		
-		var _x = 175 + i * 65;
-		var _y = 255 //+ i * 22;
-		
+        
+            
+        if instance_exists(info.heroi) && info.is_hero != false
+        {    
+		  _x = info.heroi.x//175 + i * 65;
+		  _y = info.heroi.y + i * 15;
+        }
 		
 		draw_set_color(_cor)
-		draw_text(_x , _y + _marg, lista_acoes[i])
+		draw_text(_x - 60  + _marg , (_y - 50), lista_acoes[i])
 		}
 		
 		draw_set_color(-1)
 		draw_set_font(-1)
 		
-		//draw_rectangle(240, 35, 320, 110, true)
-		//draw_rectangle(150, 210, 350,280, true)
+		
 }
 
 //DESENHA  OS PERSONAGENS ALIADOS DO PLAYER QUE APARECERÁ NO JOGO, TIRADO DA LISTA GLOBAL GLOBAL.PERSONAGENS[] NO SCRIPT
@@ -170,17 +177,18 @@ desenha_batalha = function(_lista)
 		 
 		
 		
-		 
 		
 			if i < 2
 			{
-					var _x = 170
-					var _y = 80 + (i * 50)
+					var _x = 250
+					var _y = 150 + (i * 85)
+                   
+               
 			}
 			else
 			{
-					var _x = 100
-					var _y = 60 + ((i - 2) * 50)
+					var _x = 160
+					var _y = 100 + ((i - 2) * 85)
 			}
 			
 
@@ -227,9 +235,9 @@ fim_partida = function()
 //MUDA AS AÇÕES DO JOGADOR, NA LISTA DE AÇÕES
 muda_acao = function(_lista)
 {
-	if (keyboard_check_pressed(vk_right)) acao_atual++;
+	if (keyboard_check_pressed(vk_down)) acao_atual++;
 								
-	if (keyboard_check_pressed(vk_left)) acao_atual--;	
+	if (keyboard_check_pressed(vk_up)) acao_atual--;	
 	
 	var _qtd = array_length(_lista)
 	
@@ -239,7 +247,23 @@ muda_acao = function(_lista)
 
 desenha_quadro_escolhas = function()
 {
-	draw_rectangle(137, 229, 386,288, true)	
+    var info = turnos[0]
+    
+    var _x = 0
+    var _y = 0
+    
+    if instance_exists(info.heroi) && info.is_hero != false
+    {
+        _x = info.heroi.x
+        _y = info.heroi.y - 10
+        
+        draw_set_color(make_colour_rgb(0,0,0))
+	   draw_rectangle(_x - 60, _y - 50, (_x + 55) - 60,(_y + 65) - 50, false)	
+        draw_set_color(make_colour_rgb(255,255,255))
+        
+    }
+    
+
 }
 
 
@@ -318,7 +342,7 @@ if atual.is_hero
 desenha_ataques = function()
 {
 	draw_set_font(fnt_ataques)
-		
+		var info = turnos[0]
 		usuario = turnos[0]
 		var ataques = usuario.tipo_ataques
 		var _qtd = array_length(ataques)
@@ -327,20 +351,28 @@ desenha_ataques = function()
 		var _cor = c_white
 		var _marg = 0
 		//Definindo posicão
-		
+		var _x = 0
+        var _y = 0
+            
+            
+        if instance_exists(info.heroi) && info.is_hero != false
+        {    
+		  _x = info.heroi.x//175 + i * 65;
+		  _y = info.heroi.y + i * 15;
+        }    
+            
 		if acao_atual == i
 		{
 			_cor = c_red	
 			_marg = -5
 		}
 		
-		var _x = 175 + i * 65;
-		var _y = 255 //+ i * 22;
+		
 		
 		
 		var atk = ataques[i]
 		draw_set_color(_cor)
-		draw_text(_x, _y + _marg, atk.nome)
+		draw_text(_x - 60, (_y - 50) + _marg, atk.nome)
 		}
 		
 		draw_set_color(-1)
@@ -362,26 +394,26 @@ desenha_inimigo = function(_lista)
 	{
 		
 		
-		var _x1 = 60
-		var _y1 = 20 + (i * 42);
-		var _x2 = _x1 + 150
-		var _y2 = _y1 + 32
+		//var _x1 = 60
+		//var _y1 = 20 + (i * 42);
+		//var _x2 = _x1 + 150
+		//var _y2 = _y1 + 32
 		
 		
 		var _info = _lista[i]
 		 
 		
-	
+	     
 		 
 		 	if i < 2
 			{
-					var _x = 320
-					var _y = 80 + (i * 50)
+					var _x = 500
+					var _y = 150 + (i * 85)
 			}
 			else
 			{
-					var _x = 390
-					var _y = 60 + ((i - 2) * 50)
+					var _x = 590
+					var _y = 100 + ((i - 2) * 85)
 			}
 		 
 			
