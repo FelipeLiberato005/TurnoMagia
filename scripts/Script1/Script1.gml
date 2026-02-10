@@ -94,7 +94,7 @@ var _char1 = new cria_personagem(
 "Streliza", 
 obj_strelia, 
 222, 
-230, 
+100, 
 8, 
 spr_maga_atack, 
 spr_strelizia,
@@ -104,7 +104,7 @@ spr_strelizia,
 )
 array_push(_char1.acoes, "magia");
 array_push(_char1.tipo_ataques, 
-			{nome: "ATK", tipo: "ataque", valor: 0})
+			{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
 #endregion
 
 #region CLONE STRELIZIA
@@ -112,7 +112,7 @@ var _char2 = new cria_personagem(
 "Clone", 
 obj_strelia_1, 
 333, 
-200, 
+100, 
 7, 
 spr_clone_ataque, 
 spr_strelizia_2,
@@ -122,7 +122,7 @@ spr_strelizia_2,
 )
 array_push(_char2.acoes, "magia");
 array_push(_char2.tipo_ataques, 
-			{nome: "ATK", tipo: "ataque", valor: 0})
+			{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
 #endregion
 
 #region SLIME
@@ -148,7 +148,7 @@ var _luce = new cria_personagem(
 "Lucille",
 obj_lucille,
 350,
-320,
+100,
 15,
 spr_luce_atack,
 spr_luce_idle,
@@ -159,7 +159,7 @@ spr_luce_idle,
 )
 array_push(_luce.acoes, "ataque")
 array_push(_luce.tipo_ataques, 
-		{nome: "ATK", tipo: "ataque", valor: 0}
+		{nome: "ATK", tipo: "ataque", valor: 0, mana: 20}
 		);
 		
 		
@@ -170,7 +170,7 @@ var _lilli = new cria_personagem(
 "Lilli",
 obj_lilli,
 150,
-600,
+100,
 16,
 noone,
 spr_lili_idle,
@@ -180,9 +180,9 @@ spr_lili_healer,
 ) 
 array_push(_lilli.acoes, "magia")
 array_push(_lilli.tipo_ataques,
-		{nome: "Cura", tipo: "cura", valor: 75},
-		{nome: "+DMG", tipo: "buff", valor: 50},
-		{nome: "ATK", tipo: "ataque", valor: 25}
+		{nome: "Cura", tipo: "cura", valor: 75, mana: 60},
+		{nome: "+DMG", tipo: "buff", valor: 50, mana: 40},
+		{nome: "ATK", tipo: "ataque", valor: 25, mana: 20}
 );
 #endregion
 
@@ -191,7 +191,7 @@ array_push(_lilli.tipo_ataques,
 var _lica = new cria_personagem(
     "Lica",
     obj_lica,
-    240,
+    100,
     330,
     22,
     spr_lica_atack_1,
@@ -203,7 +203,7 @@ var _lica = new cria_personagem(
 )
 array_push(_lica.acoes, "magia");
 array_push(_lica.tipo_ataques,
-		{nome: "ATK", tipo: "ataque", valor: 0})
+		{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
 
 #endregion
 

@@ -1,6 +1,6 @@
 #region Limpando as Listas
 //Essa função esta limpando as listas a todo momento
-//Claro cajo atinja a condição dentro da função limpa_lista()
+//Claro caso atinja a condição dentro da função limpa_lista()
 global.batalha = limpa_lista(global.batalha);
 global.inimigo = limpa_lista(global.inimigo);
 global.herois  = limpa_lista(global.herois);
@@ -81,12 +81,13 @@ if _info.is_hero
 	{
 		if (keyboard_check_pressed(vk_enter)  && global.trava == true)
 		{
-		global.trava = false
-		executa_habilidades()
-		estado_turno = "atacou_alvo"
-		acao_realizada = "escolhendo_acao" 
+         
+		      global.trava = false
+		      executa_habilidades()
+		      //estado_turno = "atacou_alvo"
+		      acao_realizada = "escolhendo_acao" 
 		//show_debug_message("Real" + string(global.batalh
-		acao_atual = 0	
+		      acao_atual = 0	
 		}
 		
 	}	

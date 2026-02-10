@@ -30,7 +30,7 @@ tempo_espera = false
 
 //VARIAVEIS QUE CONTROLA O TEMPO ANTES DE CADA AÇÃO
  #region temporizador
-tempo = room_speed * 2
+tempo = room_speed * 1
 cronometro = 0
 #endregion
  
@@ -203,7 +203,7 @@ desenha_batalha = function(_lista)
 		var x_personagem = _info.heroi.x
 		var y_personagem = _info.heroi.y
 		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white)
-	
+	     draw_text(x_personagem - 8, y_personagem - 30, "Mana: " +string(_info.mana))  
 		
 	}
 	draw_set_font(-1)
@@ -258,7 +258,7 @@ desenha_quadro_escolhas = function()
         _y = info.heroi.y - 10
         
         draw_set_color(make_colour_rgb(0,0,0))
-	   draw_rectangle(_x - 60, _y - 50, (_x + 55) - 60,(_y + 65) - 50, false)	
+	   draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)	
         draw_set_color(make_colour_rgb(255,255,255))
         
     }
@@ -302,7 +302,8 @@ executa_habilidades = function()
 if atual.is_hero
 		{
   			
-            atual.vel_atual = 0;
+            
+            
             atual.heroi.image_index = 0;
             
             
@@ -312,16 +313,23 @@ if atual.is_hero
 			
 			executa_habilidade(usuario, alvo_atual, acao_escolhida)
 			global.alvos = false
-			
             
+            if global.true_mana == true
+            {
+                atual.vel_atual = 0;
+                global.true_mana = false
+            }
             controlando_vida(); // só marca morto = true
             
             //array_delete(turnos, 0, 1);
             //array_push(turnos, atual);
-        
             
-        turnos = limpa_lista(turnos); 
+        
         global.batalha = limpa_lista(global.batalha);
+        global.inimigo = limpa_lista(global.inimigo);
+        global.herois  = limpa_lista(global.herois);    
+            
+            
 
 // reordena por velocidade 
         turnos = ordena_val(turnos);    
@@ -364,7 +372,7 @@ desenha_ataques = function()
 		if acao_atual == i
 		{
 			_cor = c_red	
-			_marg = -5
+			_marg = 5
 		}
 		
 		
@@ -372,7 +380,8 @@ desenha_ataques = function()
 		
 		var atk = ataques[i]
 		draw_set_color(_cor)
-		draw_text(_x - 60, (_y - 50) + _marg, atk.nome)
+		draw_text((_x - 60) + _marg, (_y - 50), atk.nome)
+         draw_text((_x - 25) + _marg, (_y - 50), "("+string(atk.mana)+")")    
 		}
 		
 		draw_set_color(-1)
@@ -500,8 +509,11 @@ ia_acao = function()
             //array_push(turnos, _info);
 	
     
-        turnos = limpa_lista(turnos); 
         global.batalha = limpa_lista(global.batalha);
+        global.inimigo = limpa_lista(global.inimigo);
+        global.herois  = limpa_lista(global.herois);
+        
+        turnos = limpa_lista(turnos); 
 
 // reordena por velocidade 
     turnos = ordena_val(turnos);
@@ -565,11 +577,11 @@ mudar_alvo = function()
         return;
     }
 
-    if (keyboard_check_pressed(ord("W"))) {
+    if (keyboard_check_pressed(ord("S"))) {
         alvo_index++;
     }
 
-    if (keyboard_check_pressed(ord("S"))) {
+    if (keyboard_check_pressed(ord("W"))) {
         alvo_index--;
     }
 
