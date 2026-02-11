@@ -1,14 +1,15 @@
 
-
-desenha_quadro_escolhas()
-
+if global.trava == true
+{
+    desenha_quadro_escolhas()
+}
 //DESENHA AS AÇÕES DO PLAYER
 //ATAQUE, ITEM...
-if acao_realizada == "escolhendo_acao"
+if acao_realizada == "escolhendo_acao" && global.trava == true
 {
 	desenha_acoes()
 }
-if acao_realizada == "escolhendo_ataque"
+if acao_realizada == "escolhendo_ataque" && global.trava == true
 {
 	desenha_ataques()	
 }

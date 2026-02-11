@@ -88,6 +88,8 @@ if _info.is_hero
 		      acao_realizada = "escolhendo_acao" 
 		//show_debug_message("Real" + string(global.batalh
 		      acao_atual = 0	
+            //Zerando o alpha para fazer a transição do quadro de escolhas
+              alpha = 0 
 		}
 		
 	}	
@@ -120,7 +122,9 @@ reseta_turno(global.batalha)
    // restaura_velocidade();
     restaura_velocidade()
     
-
+    //zerando o alpha para fazer a transição do quadro de escolhas
+    
+    
     // 3️⃣ reordena turnos
     turnos = ordena_val(global.batalha);
     
@@ -150,4 +154,7 @@ mudar_alvo()
 
 //ia_acao()
 
+
+
+show_debug_message(alpha)
 fim_partida()

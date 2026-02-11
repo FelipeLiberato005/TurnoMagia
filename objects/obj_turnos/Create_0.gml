@@ -1,4 +1,4 @@
- 
+   alpha = 0
 //LISTA COM AS AÇÕES DO PLAYER
 //SUPER IMPORTANTE
 
@@ -247,6 +247,7 @@ muda_acao = function(_lista)
 
 desenha_quadro_escolhas = function()
 {
+  
     var info = turnos[0]
     
     var _x = 0
@@ -258,12 +259,15 @@ desenha_quadro_escolhas = function()
         _y = info.heroi.y - 10
         
         draw_set_color(make_colour_rgb(0,0,0))
-	   draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)	
+        draw_set_alpha(alpha) 
+        draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)	
         draw_set_color(make_colour_rgb(255,255,255))
-        
     }
-    
-
+ 
+      if alpha < 1
+{
+    alpha += 0.01
+}
 }
 
 
