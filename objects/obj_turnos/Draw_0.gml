@@ -30,9 +30,6 @@ if global.trava == true
 if global.alvos == true 	vizualiza_alvo()
 
 
-
-
-
 //DESENHA O VALOR DO TURNO, EM QUE TURNO O JOGO ESTÁ
 //NADA DE MAIS
 desenha_turno()

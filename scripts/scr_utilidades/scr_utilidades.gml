@@ -152,7 +152,7 @@ function executa_habilidade(usuario, alvo, acao)
             
 		#region CURA
 		case "cura":
-            if atk.mana <= usuario.mana
+            if atk.mana <= obj_player.mana
             {
 			usuario.heroi.sprite_index = usuario.cura;
 			
@@ -174,13 +174,18 @@ function executa_habilidade(usuario, alvo, acao)
                  
 				
 			}
-            usuario.mana -= atk.mana 
+            obj_player.mana -= atk.mana 
             global.true_mana = true
             global.fim_animacao = true 
             }
             else {
             {
-                show_message("Mana Insuficiente!")
+                //show_message("Mana Insuficiente!")
+                var x_alvo = usuario.heroi.x 
+                var y_alvo = usuario.heroi.y
+                var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+                temp.txtCura = "Sem Mana! "
+                temp.sinal = " "
             }
             }
 			#endregion
@@ -190,7 +195,7 @@ function executa_habilidade(usuario, alvo, acao)
 		#region BUFFS
 		case "buff":
 			//usuario.heroi.sprite_index = usuario.ataque;
-        if atk.mana <= usuario.mana 
+        if atk.mana <= obj_player.mana
         {    
 			usuario.heroi.sprite_index = usuario.cura;
 			
@@ -209,20 +214,25 @@ function executa_habilidade(usuario, alvo, acao)
 				global.herois[i].dano_atual += atk.valor
                 
 			}
-            usuario.mana -= atk.mana
+            obj_player.mana -= atk.mana
             global.true_mana = true
             global.fim_animacao = true  
 			//aplica_buff(alvo, buff);
         }
             else {
-            	show_message("Mana Insuficente!")
+            	//show_message("Mana Insuficente!")
+                var x_alvo = usuario.heroi.x 
+                var y_alvo = usuario.heroi.y
+                var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+                temp.txtCura = "Sem Mana! "
+                temp.sinal = " "
             }
 			#endregion
 		break;
 		
 		#region ATK BASICO
 		case "ataque":
-        if atk.mana <= usuario.mana    
+        if atk.mana <= obj_player.mana    
         {
 		var x_alvo = alvo.heroi.x
 		var y_alvo = alvo.heroi.y
@@ -237,13 +247,18 @@ function executa_habilidade(usuario, alvo, acao)
 			//var temp = instance_create_layer(x,y-10,"Instances", obj_cura)
 			//temp.depth = depth - 1
 			//temp.txtCura = usuario.dano_atual 
-            usuario.mana -= atk.mana   
+            obj_player.mana -= atk.mana   
             global.true_mana = true
             global.fim_animacao = true   
         }
         else {
         {
-            show_message("Mana Insuficiente!")
+            //show_message("Mana Insuficiente!")
+            var x_alvo = usuario.heroi.x 
+            var y_alvo = usuario.heroi.y
+            var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+            temp.txtCura = "Sem Mana! "
+            temp.sinal = " "
         }
                                                     }                                              
 		break;

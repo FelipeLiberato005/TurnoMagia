@@ -12,6 +12,8 @@ round_finalizado = false;
 acao_realizada = "escolhendo_acao"
 
 
+valor_mana = 20
+
 //ESQUECI PARA QUE SERVE, POREM, VOU MATE-LAS, ATÉ LEMBRAR PARA QUE CRIEI-AS
 //PROVAVELMENTE DE IDEIAS QUE DERAM ERRADO E ESQUECI DE DELETA-LAS
 //HAHAHAHA
@@ -52,14 +54,27 @@ down = noone
 up = keyboard_check_pressed(ord("W"))
 down = keyboard_check_pressed(ord("S"))
 #endregion
-
+ganha_mana = function()
+{
+    obj_player.mana = obj_player.mana + valor_mana
+    var temp  = instance_create_layer(350, 65,"Instances", obj_cura)
+    temp.fonte = fnt_turno
+    temp.alpha_redux = 0.005
+    temp.vspd = 0.05
+	temp.txtCura = valor_mana
+    temp.cor = make_colour_rgb(0,255, 0)
+	temp.sinal = "Mana +"
+    
+}
 //DESENHA O TURNO EM QUE O JOGO ESTA
 //NADA DE MAIS POR ENQUANTO... É SÓ UM NUMERO QUE MUDA QUANDO O TURNO RESETA
 desenha_turno = function()
 {
 	draw_set_font(fnt_turno)
-	draw_text(320, 150, global.reseta_turnos)
+    draw_set_colour(make_colour_rgb(50,0,50))
+	draw_text(320, 150, "Turno: " + string(global.reseta_turnos))
 	draw_set_font(-1)
+    draw_set_colour(c_white)
 }
 
 //RESETA O TURNO
@@ -86,6 +101,8 @@ reseta_turno = function(_lista)
 			global.reseta_turnos += 1;	
 			global.passei = true
             round_finalizado = true
+            ganha_mana()
+            obj_player.mana = obj_player.mana + valor_mana
 		}
 }
 
@@ -203,8 +220,6 @@ desenha_batalha = function(_lista)
 		var x_personagem = _info.heroi.x
 		var y_personagem = _info.heroi.y
 		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white)
-	     draw_text(x_personagem - 8, y_personagem - 30, "Mana: " +string(_info.mana))  
-		
 	}
 	draw_set_font(-1)
 }

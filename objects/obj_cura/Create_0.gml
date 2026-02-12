@@ -9,3 +9,5 @@ vspd = 0.5
 cor = c_red
 
 sinal = "+"
+
+fonte = fnt_dano

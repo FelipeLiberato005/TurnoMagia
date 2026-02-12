@@ -104,7 +104,7 @@ spr_strelizia,
 )
 array_push(_char1.acoes, "magia");
 array_push(_char1.tipo_ataques, 
-			{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
+			{nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
 #endregion
 
 #region CLONE STRELIZIA
@@ -122,7 +122,7 @@ spr_strelizia_2,
 )
 array_push(_char2.acoes, "magia");
 array_push(_char2.tipo_ataques, 
-			{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
+			{nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
 #endregion
 
 #region SLIME
@@ -159,7 +159,7 @@ spr_luce_idle,
 )
 array_push(_luce.acoes, "ataque")
 array_push(_luce.tipo_ataques, 
-		{nome: "ATK", tipo: "ataque", valor: 0, mana: 20}
+		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0}
 		);
 		
 		
@@ -180,9 +180,9 @@ spr_lili_healer,
 ) 
 array_push(_lilli.acoes, "magia")
 array_push(_lilli.tipo_ataques,
-		{nome: "Cura", tipo: "cura", valor: 75, mana: 60},
-		{nome: "+DMG", tipo: "buff", valor: 50, mana: 40},
-		{nome: "ATK", tipo: "ataque", valor: 25, mana: 20}
+		{nome: "Cura", tipo: "cura", valor: 75, mana: 40},
+		{nome: "+DMG", tipo: "buff", valor: 50, mana: 20},
+		{nome: "ATK", tipo: "ataque", valor: 25, mana: 0}
 );
 #endregion
 
@@ -203,7 +203,7 @@ var _lica = new cria_personagem(
 )
 array_push(_lica.acoes, "magia");
 array_push(_lica.tipo_ataques,
-		{nome: "ATK", tipo: "ataque", valor: 0, mana: 20})
+		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
 
 #endregion
 
