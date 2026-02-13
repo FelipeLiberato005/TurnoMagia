@@ -277,6 +277,7 @@ desenha_quadro_escolhas = function()
         draw_set_alpha(alpha) 
         draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)	
         draw_set_color(make_colour_rgb(255,255,255))
+        draw_set_alpha(1)
     }
  
       if alpha < 1
@@ -317,6 +318,18 @@ executa_habilidades = function()
     if (round_finalizado) return;
 
     var atual = turnos[0];
+    
+    var usuario = turnos[0];
+
+    if (usuario.morto || usuario.controla_vida.vida <= 0)
+    {
+    // remove ele da lista e pula turno
+        controlando_vida();
+        remove_mortos();
+
+        turnos = ordena_val(global.batalha);
+        return;
+    }
 	
 if atual.is_hero
 		{
@@ -338,15 +351,17 @@ if atual.is_hero
                 atual.vel_atual = 0;
                 global.true_mana = false
             }
-            controlando_vida(); // só marca morto = true
+           
             
+            
+             controlando_vida(); // só marca morto = true
+            
+            remove_mortos()
             //array_delete(turnos, 0, 1);
             //array_push(turnos, atual);
             
         
-        global.batalha = limpa_lista(global.batalha);
-        global.inimigo = limpa_lista(global.inimigo);
-        global.herois  = limpa_lista(global.herois);    
+          
             
             
 
@@ -471,20 +486,39 @@ desenha_inimigo = function(_lista)
 }
 	
 	
+//controlando_vida = function()
+//{
+    //for (var i = array_length(turnos) - 1; i >= 0; i--)
+    //{
+        //var _p = turnos[i];
+//
+        //if (_p.controla_vida.vida <= 0 && !_p.morto)
+        //{
+            //_p.morto = true;
+//
+            //// remove da ordem de turnos
+            //array_delete(turnos, i, 1);
+//
+            //// opcional: remover do campo
+            //if (instance_exists(_p.heroi))
+            //{
+                //with (_p.heroi) instance_destroy();
+            //}
+        //}
+    //}
+//}
+
+
 controlando_vida = function()
 {
-    for (var i = array_length(turnos) - 1; i >= 0; i--)
+    for (var i = 0; i < array_length(global.batalha); i++)
     {
-        var _p = turnos[i];
+        var _p = global.batalha[i];
 
         if (_p.controla_vida.vida <= 0 && !_p.morto)
         {
             _p.morto = true;
 
-            // remove da ordem de turnos
-            array_delete(turnos, i, 1);
-
-            // opcional: remover do campo
             if (instance_exists(_p.heroi))
             {
                 with (_p.heroi) instance_destroy();
@@ -494,6 +528,13 @@ controlando_vida = function()
 }
 
 
+function remove_mortos()
+{
+    turnos = limpa_lista(turnos);
+    global.batalha = limpa_lista(global.batalha);
+    global.herois = limpa_lista(global.herois);
+    global.inimigo = limpa_lista(global.inimigo);
+}
 
 
 //DESENHA O STENCIL, DESTACA O PERSONAGEM QUE ESTÁ EM SUA VEZ DO TURNO
@@ -509,9 +550,19 @@ desenha_stencil = function()
 ia_acao = function()
 {
 	 if (round_finalizado) return;
+        var _info = turnos[0]
+        
+    if (_info.morto || _info.controla_vida.vida <= 0)
+    {
+    // remove ele da lista e pula turno
+        controlando_vida();
+        remove_mortos();
+
+        turnos = ordena_val(global.batalha);
+        return;
+    }
 			
 			
-			var _info = turnos[0]
 			_info.vel_atual = 0;
             _info.heroi.image_index = 0;
             var _ia = array_length(global.herois)
@@ -528,9 +579,8 @@ ia_acao = function()
             //array_push(turnos, _info);
 	
     
-        global.batalha = limpa_lista(global.batalha);
-        global.inimigo = limpa_lista(global.inimigo);
-        global.herois  = limpa_lista(global.herois);
+        controlando_vida();
+        remove_mortos();
         
         turnos = limpa_lista(turnos); 
 

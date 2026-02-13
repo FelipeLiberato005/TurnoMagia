@@ -93,7 +93,7 @@ function ordena_val(_array)
 var _char1 = new cria_personagem(
 "Streliza", 
 obj_strelia, 
-222, 
+200, 
 100, 
 8, 
 spr_maga_atack, 
@@ -111,7 +111,7 @@ array_push(_char1.tipo_ataques,
 var _char2 = new cria_personagem(
 "Clone", 
 obj_strelia_1, 
-333, 
+210, 
 100, 
 7, 
 spr_clone_ataque, 
@@ -129,14 +129,14 @@ array_push(_char2.tipo_ataques,
 var _char3 = new cria_personagem(
 "Slime", 
 obj_gosma, 
-444, 
+220, 
 100, 
 4, 
 spr_slime_atack, 
 spr_gosma,
 ,
 false,
-30
+60
 ) 
 array_push(_char3.acoes, "ataque");
 array_push(_char3.tipo_ataques, 
@@ -147,7 +147,7 @@ array_push(_char3.tipo_ataques,
 var _luce = new cria_personagem(
 "Lucille",
 obj_lucille,
-350,
+210,
 100,
 15,
 spr_luce_atack,
@@ -180,7 +180,7 @@ spr_lili_healer,
 ) 
 array_push(_lilli.acoes, "magia")
 array_push(_lilli.tipo_ataques,
-		{nome: "Cura", tipo: "cura", valor: 75, mana: 40},
+		{nome: "Cura", tipo: "cura", valor: 20, mana: 20},
 		{nome: "+DMG", tipo: "buff", valor: 50, mana: 20},
 		{nome: "ATK", tipo: "ataque", valor: 25, mana: 0}
 );
@@ -191,7 +191,7 @@ array_push(_lilli.tipo_ataques,
 var _lica = new cria_personagem(
     "Lica",
     obj_lica,
-    100,
+    200,
     100,
     22,
     spr_lica_atack_1,
@@ -219,7 +219,7 @@ spr_corvo_atack,
 spr_corvo,
 noone,
 false,
-35
+55
 )
 array_push(_inimigo1.acoes, "ataque");
 array_push(_inimigo1.tipo_ataques,
@@ -231,14 +231,14 @@ array_push(_inimigo1.tipo_ataques,
 var _inimigo2 = new cria_personagem(
 "Crow", 
 obj_luana, 
-300, 
+200, 
 100, 
 1, 
 spr_corvo_atack, 
 spr_player2,
 noone,
 false,
-30
+60
 )
 array_push(_inimigo2.acoes, "ataque");
 array_push(_inimigo2.tipo_ataques,
@@ -250,14 +250,14 @@ array_push(_inimigo2.tipo_ataques,
 var _cavaleiro = new cria_personagem(
 "Cavaleiro",
 obj_cavaleiro,
-640,
+450,
 100,
 4,
 spr_cavaleiro_atack,
 spr_cavaleiro_idle,
 ,
 false,
-25)
+70)
 array_push(_inimigo2.acoes, "defesa");
 array_push(_cavaleiro.tipo_ataques,
 		{nome: "ATK", tipo: "ataque", valor: 0})
@@ -268,7 +268,7 @@ array_push(_cavaleiro.tipo_ataques,
 var nyah = new cria_personagem(
 "Nyah",
 obj_nyah,
-500,
+250,
 100,
 12,
 spr_nyah_atack,

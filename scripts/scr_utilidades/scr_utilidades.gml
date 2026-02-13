@@ -24,6 +24,7 @@ global.alvos = false
 
 global.true_mana = false
 
+
 function limpa_lista(_lista)
 {
     for (var i = array_length(_lista) - 1; i >= 0; i--)
@@ -143,7 +144,7 @@ function cria_buff(_nome, _atributo, _valor, _turnos)
 
 function executa_habilidade(usuario, alvo, acao)
 {
-    //if (alvo.morto) exit;
+    if (usuario.morto) exit;
         
 	var atk = usuario.tipo_ataques[acao_atual]
 	switch(atk.tipo)
@@ -166,11 +167,11 @@ function executa_habilidade(usuario, alvo, acao)
 				var y_alvo = global.herois[i].heroi.y
 				var temp  = instance_create_layer(x_alvo-20, y_alvo-20,"Instances", obj_cura)
 				
-				
-				temp.txtCura = atk.valor
+				cura = ((atk.valor/100) * usuario.dano_atual)
+				temp.txtCura = cura
 				temp.cor = c_green
 				temp.depth = depth - 1
-				global.herois[i].controla_vida.ganha_vida(atk.valor)
+				global.herois[i].controla_vida.ganha_vida(cura)
                  
 				
 			}
