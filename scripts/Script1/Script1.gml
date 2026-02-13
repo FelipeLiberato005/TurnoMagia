@@ -100,7 +100,7 @@ spr_maga_atack,
 spr_strelizia,
 ,
 ,
-78
+20
 )
 array_push(_char1.acoes, "magia");
 array_push(_char1.tipo_ataques, 
@@ -118,7 +118,7 @@ spr_clone_ataque,
 spr_strelizia_2,
 ,
 ,
-80
+25
 )
 array_push(_char2.acoes, "magia");
 array_push(_char2.tipo_ataques, 
@@ -136,7 +136,7 @@ spr_slime_atack,
 spr_gosma,
 ,
 false,
-60
+30
 ) 
 array_push(_char3.acoes, "ataque");
 array_push(_char3.tipo_ataques, 
@@ -154,7 +154,7 @@ spr_luce_atack,
 spr_luce_idle,
 ,
 ,
-70
+30
 
 )
 array_push(_luce.acoes, "ataque")
@@ -176,12 +176,12 @@ noone,
 spr_lili_idle,
 spr_lili_healer,
 ,
-80
+20
 ) 
 array_push(_lilli.acoes, "magia")
 array_push(_lilli.tipo_ataques,
-		{nome: "Cura", tipo: "cura", valor: 20, mana: 20},
-		{nome: "+DMG", tipo: "buff", valor: 10, mana: 20},
+		{nome: "Cura", tipo: "cura", valor: 50, mana: 60},
+		{nome: "+DMG", tipo: "buff", valor: 10, mana: 40},
 		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0}
 );
 #endregion
@@ -198,7 +198,7 @@ var _lica = new cria_personagem(
     spr_lica_idle,
     ,
     ,
-    95
+    25
     
 )
 array_push(_lica.acoes, "magia");
@@ -219,7 +219,7 @@ spr_corvo_atack,
 spr_corvo,
 noone,
 false,
-55
+20
 )
 array_push(_inimigo1.acoes, "ataque");
 array_push(_inimigo1.tipo_ataques,
@@ -238,7 +238,7 @@ spr_corvo_atack,
 spr_player2,
 noone,
 false,
-60
+20
 )
 array_push(_inimigo2.acoes, "ataque");
 array_push(_inimigo2.tipo_ataques,
@@ -250,14 +250,14 @@ array_push(_inimigo2.tipo_ataques,
 var _cavaleiro = new cria_personagem(
 "Cavaleiro",
 obj_cavaleiro,
-450,
+240,
 100,
 18,
 spr_cavaleiro_atack,
 spr_cavaleiro_idle,
 ,
 false,
-70)
+15)
 array_push(_inimigo2.acoes, "defesa");
 array_push(_cavaleiro.tipo_ataques,
 		{nome: "ATK", tipo: "ataque", valor: 0})
@@ -275,7 +275,7 @@ spr_nyah_atack,
 spr_nyah_idle,
 ,
 false,
-85
+25
 )
 array_push(nyah.acoes, "ataque")
 array_push(nyah.tipo_ataques, 
@@ -293,7 +293,7 @@ spr_lica_atack,
 spr_lica_idle_1,
 ,
 false,
-78
+30
 )
 array_push(lica_enemy.acoes, "magia")
 array_push(lica_enemy.tipo_ataques,

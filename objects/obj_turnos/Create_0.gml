@@ -102,7 +102,6 @@ reseta_turno = function(_lista)
 			global.passei = true
             round_finalizado = true
             ganha_mana()
-            obj_player.mana = obj_player.mana + valor_mana
 		}
 }
 
@@ -319,9 +318,9 @@ executa_habilidades = function()
 
     var atual = turnos[0];
     
-    var usuario = turnos[0];
+   
 
-    if (usuario.morto || usuario.controla_vida.vida <= 0)
+    if (atual.morto || atual.controla_vida.vida <= 0)
     {
     // remove ele da lista e pula turno
         controlando_vida();
@@ -354,26 +353,15 @@ if atual.is_hero
            
             
             
-             controlando_vida(); // só marca morto = true
+            controlando_vida(); // só marca morto = true
             
             remove_mortos()
             //array_delete(turnos, 0, 1);
             //array_push(turnos, atual);
-            
-        
-          
-            
-            
+            // reordena por velocidade 
+            turnos = ordena_val(turnos);    
+            //;
 
-// reordena por velocidade 
-        turnos = ordena_val(turnos);    
-        reseta_turno(global.batalha);
-
-        //if (global.passei)
-        //{
-            //round_finalizado = true;
-            //return;
-        //}
 	   }
     
     //show_message(_info.vel_atual)
@@ -437,16 +425,8 @@ desenha_inimigo = function(_lista)
 	{
 		
 		
-		//var _x1 = 60
-		//var _y1 = 20 + (i * 42);
-		//var _x2 = _x1 + 150
-		//var _y2 = _y1 + 32
-		
-		
 		var _info = _lista[i]
 		 
-		
-	     
 		 
 		 	if i < 2
 			{
@@ -460,12 +440,6 @@ desenha_inimigo = function(_lista)
 			}
 		 
 			
-		//show_message(_info.x)
-		
-		//draw_sprite(_info.spr, 0, _x2 - 31, _y1)
-		//draw_sprite_ext(_info.spr, 0, _x2 - 31, _y1, 1, 1, 1, c_white, 1)
-		//draw_text(_x1 + 50, _y1, vida)
-		
 		
 		if !instance_exists(_info.heroi)
 		{
@@ -486,28 +460,6 @@ desenha_inimigo = function(_lista)
 }
 	
 	
-//controlando_vida = function()
-//{
-    //for (var i = array_length(turnos) - 1; i >= 0; i--)
-    //{
-        //var _p = turnos[i];
-//
-        //if (_p.controla_vida.vida <= 0 && !_p.morto)
-        //{
-            //_p.morto = true;
-//
-            //// remove da ordem de turnos
-            //array_delete(turnos, i, 1);
-//
-            //// opcional: remover do campo
-            //if (instance_exists(_p.heroi))
-            //{
-                //with (_p.heroi) instance_destroy();
-            //}
-        //}
-    //}
-//}
-
 
 controlando_vida = function()
 {
@@ -562,7 +514,6 @@ ia_acao = function()
         return;
     }
 			
-			
 			_info.vel_atual = 0;
             _info.heroi.image_index = 0;
             var _ia = array_length(global.herois)
@@ -573,11 +524,7 @@ ia_acao = function()
 			var acao_escolhida = usuario.tipo_ataques[0]; // depois vem do menu
 			
 			executa_ia(usuario, alvo_ia, acao_escolhida)
-			//show_message(_ia_aleatorio)
-    
-            //array_delete(turnos, 0, 1);
-            //array_push(turnos, _info);
-	
+			
     
         controlando_vida();
         remove_mortos();
@@ -587,14 +534,6 @@ ia_acao = function()
 // reordena por velocidade 
     turnos = ordena_val(turnos);
     //reseta_turno(global.batalha);
-
-    // SE TODOS JÁ AGIRAM
-    //if (global.passei)
-    //{
-        //round_finalizado = true;
-        //return; // impede novo ataque
-    //}
-    
 }
 
 ia_alvo = function()
@@ -616,27 +555,7 @@ ia_alvo = function()
 mudar_alvo = function()
 {
 	
-		//if keyboard_check_pressed(ord("W")){
-			//alvo_index++	
-			////show_debug_message(alvo_atual)
-			//if(alvo_index >= array_length(global.inimigo))
-			//{
-				//alvo_index = 0
-				//
-			//}
-		//}
-		//
-		//if keyboard_check_pressed(ord("S")){
-			//alvo_index--;	
-			////show_debug_message(alvo_atual)
-			//if(alvo_index < 0)
-			//{
-				//alvo_index = array_length(global.inimigo) - 1	
-			//}
-		//}
-		//
-		//alvo_atual = global.inimigo[alvo_index]
-    
+		
     
     var qtd = array_length(global.inimigo);
 

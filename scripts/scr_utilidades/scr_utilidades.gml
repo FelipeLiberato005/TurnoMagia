@@ -144,7 +144,7 @@ function cria_buff(_nome, _atributo, _valor, _turnos)
 
 function executa_habilidade(usuario, alvo, acao)
 {
-    if (usuario.morto) exit;
+    //if (usuario.morto) exit;
         
 	var atk = usuario.tipo_ataques[acao_atual]
 	switch(atk.tipo)

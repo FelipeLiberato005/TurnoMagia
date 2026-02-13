@@ -1,7 +1,7 @@
 #region Limpando as Listas
 //Essa função esta limpando as listas a todo momento
 //Claro caso atinja a condição dentro da função limpa_lista()
-
+reseta_turno(global.batalha)
 #endregion
 
 #region condição temporizador
@@ -101,7 +101,7 @@ else if _info.is_hero == false && global.trava == true
 }
 #endregion
 
-reseta_turno(global.batalha)
+//
 
 #region finaliza round
 //SE A VARIAVEL round_finalizado FOR TRUE, OU SEJA, TODOS AS INSTANCIAS ATACARAM
@@ -111,10 +111,8 @@ reseta_turno(global.batalha)
 	if (round_finalizado)
 {
     
-        
+    remove_mortos()
     
-
-    // 
    // restaura_velocidade();
     restaura_velocidade()
     
@@ -123,9 +121,7 @@ reseta_turno(global.batalha)
     
     // 3️⃣ reordena turnos
     turnos = ordena_val(global.batalha);
-    global.batalha = limpa_lista(global.batalha);
-    global.inimigo = limpa_lista(global.inimigo);
-    global.herois  = limpa_lista(global.herois);
+    
     //show_message(array_length(global.inimigo))
 
     // 
