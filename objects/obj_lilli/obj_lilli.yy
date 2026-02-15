@@ -8,8 +8,8 @@
   "name":"obj_lilli",
   "overriddenProperties":[],
   "parent":{
-    "name":"Personagens",
-    "path":"folders/Objects/Personagens.yy",
+    "name":"Peronagens_new",
+    "path":"folders/Objects/Peronagens_new.yy",
   },
   "parentObjectId":{
     "name":"obj_controla",

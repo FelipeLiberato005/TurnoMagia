@@ -629,4 +629,3 @@ vizualiza_alvo = function()
  //ORDENANDO TURNOS
  //APARTIR DA MINHA FUNÇÃO DE ORDENAÇÃO NO SCRIPT
 turnos = ordena_val(global.batalha)
-

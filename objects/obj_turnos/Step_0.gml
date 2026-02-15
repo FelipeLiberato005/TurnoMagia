@@ -150,5 +150,5 @@ mudar_alvo()
 
 
 
-show_debug_message(alpha)
+
 fim_partida()

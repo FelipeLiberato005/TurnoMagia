@@ -1,0 +1,11 @@
+desenha_escolhas()
+mostrando_formacao(global.herois)
+info_listas()
+
+draw_set_colour(make_colour_rgb(255,0,0))
+draw_set_font(fnt_info_updates)
+draw_text(620, 400, "Voltar (Esc)")
+draw_text(580, 380, "Retirar (Backspace)")
+draw_text(620, 360, "Batalhar (O)")
+draw_set_font(-1)
+draw_set_colour(c_white)

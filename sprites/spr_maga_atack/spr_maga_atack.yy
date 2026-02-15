@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"maga",
-    "path":"folders/Sprites/Sprites Personagens/maga.yy",
+    "name":"stre",
+    "path":"folders/Sprites/Sprites Personagens/stre.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

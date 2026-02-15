@@ -87,6 +87,48 @@ function ordena_val(_array)
 	return _lista
 }
 
+
+
+#region Aqui são os personagens garantido na versão final ou quase isso
+ 
+#region Maga
+var maga = new cria_personagem(
+"Maga",
+obj_maga,
+150,
+100,
+28,
+spr_rich_atack,
+spr_rich_idle,
+,
+,
+80
+)
+array_push(maga.acoes, "magia")
+array_push(maga.tipo_ataques,
+            {nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
+#endregion
+
+#region Arqueira
+
+var arqueira = new cria_personagem(
+"Arqueira",
+obj_arqueira,
+180,   
+100,
+26,
+spr_arqueira_ataque,
+spr_arqueira_idle,
+,
+,
+75 
+)
+array_push(arqueira.acoes, "ataque")
+array_push(arqueira.tipo_ataques,
+            {nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
+
+#endregion
+#endregion
 //HEROIS
 
 #region STRELIZIA
@@ -310,20 +352,31 @@ _lilli,
 _cavaleiro,
 _lica,
 nyah,
-lica_enemy]
+lica_enemy,
+maga,
+arqueira,
+_char1]
      
+
+
+
+global.escolhas_player = [
+    _char1,
+    _char2,
+    _lilli,
+    _lica,
+    maga,
+    arqueira,
+    _luce
+]
+
 	 
 global.batalha = [
-_lilli,
-_char1, 
-_char2, 
-_char3,
-_luce,
-_inimigo1,
-lica_enemy,
-_cavaleiro,
-_lica,
-nyah
+    _inimigo1,
+    _cavaleiro,
+    lica_enemy,
+    _char3,
+    nyah
 ]
 
 
@@ -333,7 +386,7 @@ nyah
 global.inimigo = [_inimigo1, _cavaleiro, lica_enemy, _char3, nyah]
 
 //Lista de Herois
-global.herois = [_char1, _luce, _lica, _lilli, _char2]
+global.herois = []
 
 
 //global.turno = [_char1, _char2, _char3]

@@ -24,6 +24,25 @@ global.alvos = false
 
 global.true_mana = false
 
+global.i = 0
+
+function controla_lista_player()
+{
+
+    var personagem = global.escolhas_player[escolha];
+
+    // limite de 5
+    if array_length(global.herois) >= 5
+    {
+        return;
+    }
+
+    // evitar duplicado
+    if !array_contains(global.herois, personagem)
+    {
+        array_push(global.herois, personagem);
+    }
+}
 
 function limpa_lista(_lista)
 {
@@ -46,8 +65,22 @@ function limpa_lista(_lista)
     return _lista;
 }
 
+function montar_batalha()
+{
+    //global.batalha = []; 
 
-
+    // adiciona herois escolhidos
+    for (var i = 0; i < array_length(global.herois); i++)
+    {
+        var p = global.herois[i];
+        array_push(global.batalha, p);
+    }
+    //for (var i = 0; i < array_length(global.inimigo); i++)
+    //{
+        //var e = global.inimigo[i];
+        //array_push(global.batalha, e);
+    //}
+}
 function ativar_stencil(_heroi)
 {
 	

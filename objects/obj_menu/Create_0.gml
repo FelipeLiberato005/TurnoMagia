@@ -62,7 +62,7 @@ if(keyboard_check_released(vk_enter))
 escolhendo_menu = function(){
     switch (atual) {
     	case 0:
-            room_goto(rm_jogo)
+            room_goto(rm_escolhas)
             break
         case 1:
             room_goto(rm_updates)
