@@ -1,6 +1,7 @@
 updates = [
     " 13/02/2026 -> Agora a personagem cura 20% de seu ataque",
-    "13/02/2026 -> Dano inimigo aumentado, para equilibrio do jogo"
+    "13/02/2026 -> Dano inimigo aumentado, para equilibrio do jogo",
+    "15/02/2026 -> Sistema de escolha da formação"
 ]
 
 

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"stencil",
+    "path":"folders/Sprites/stencil.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

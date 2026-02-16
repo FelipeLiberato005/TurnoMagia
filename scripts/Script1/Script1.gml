@@ -388,7 +388,7 @@ global.inimigo = [_inimigo1, _cavaleiro, lica_enemy, _char3, nyah]
 //Lista de Herois
 global.herois = []
 
-
+global.itens = []
 //global.turno = [_char1, _char2, _char3]
 
 //show_message(global.batalha)
