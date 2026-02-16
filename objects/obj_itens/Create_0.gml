@@ -1,6 +1,6 @@
 tam_celula    = 32
-colunas       = 4
-linhas        = 20
+colunas       = 0
+linhas        = 0
 inv_y         = 0
 marg          = 20
 
@@ -48,12 +48,16 @@ desenha_surface = function()
 
 desenha_inventario = function()
 {
+    colunas = array_length(global.itens)
+    linhas = array_length(global.itens)
+    inv_y_max   = (linhas * tam_celula) + marg + marg * linhas - surf_h
     if (mouse_wheel_up()) inv_y -= 8
         
     if (mouse_wheel_down()) inv_y += 8
         
     inv_y = clamp(inv_y, -inv_y_max, 0)
     
+   
     for (var i = 0; i < linhas; i++)
     {
         for (var j = 0; j < colunas; j++)
