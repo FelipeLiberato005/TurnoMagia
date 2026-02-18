@@ -26,6 +26,8 @@ global.true_mana = false
 
 global.i = 0
 
+global.aberto = false
+
 function controla_lista_player()
 {
 
@@ -327,4 +329,41 @@ function executa_ia(usuario, alvo, acao)
     //    alvo.morto = true;
     //}
 }
+
+
+function usa_item(usuario, acao)
+{
+   
+    var item = global.itens[acao_atual]
+   
+    switch (item.nome) 
+{
+        case "Cura":
+            //usuario.heroi.sprite_index = usuario.cura;
+            show_message("Cura!")
+			
+			//var  _cura = item.valor
+			//var _qtd = array_length(global.herois) 
+			//
+			//for (i = 0; i < _qtd; i++)
+			//{
+                //
+				//var x_alvo = global.herois[i].heroi.x
+				//var y_alvo = global.herois[i].heroi.y
+				//var temp  = instance_create_layer(x_alvo-20, y_alvo-20,"Instances", obj_cura)
+				//
+				//cura = ((50/100) * item.valor)
+				//temp.txtCura = cura
+				//temp.cor = c_green
+				//temp.depth = depth - 1
+				//global.herois[i].controla_vida.ganha_vida(cura)
+                 
+			//}
+            
+            
+        break;   
+} 
+    	
+ }
+
 

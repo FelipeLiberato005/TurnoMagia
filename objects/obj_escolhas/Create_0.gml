@@ -166,8 +166,7 @@ info_listas = function()
         draw_set_font(-1)
     }
     
-    draw_set_font(fnt_turno)
-draw_text(600, 32, "Lista batalha" + string(array_length(global.batalha)))
-draw_text(600, 65, "Lista Aliados" + string(array_length(global.herois)))
+    draw_set_font(fnt_herois)
+draw_text(600, 225, "Personagens (" + string(array_length(global.herois))+")")
 draw_set_font(-1)
 }

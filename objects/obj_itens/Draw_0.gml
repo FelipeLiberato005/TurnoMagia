@@ -1,8 +1,6 @@
 //desenha_inventario()
 
-if aberto = true
+if global.aberto = true
 {
     desenha_surface()
 }
-
-desenha_mochila()

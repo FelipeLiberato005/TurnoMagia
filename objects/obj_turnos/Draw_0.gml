@@ -14,6 +14,10 @@ if acao_realizada == "escolhendo_ataque" && global.trava == true
 	desenha_ataques()	
 }
 
+if acao_realizada == "escolhendo_itens" && global.trava == true
+{
+    desenha_itens()
+}
 //DESENHA OS ALIADOS
 desenha_batalha(global.herois)
 

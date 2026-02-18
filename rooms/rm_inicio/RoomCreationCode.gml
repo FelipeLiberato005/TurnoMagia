@@ -1,0 +1,1 @@
+instance_create_layer(700, 32, "Player", obj_player)

@@ -274,7 +274,12 @@ desenha_quadro_escolhas = function()
         
         draw_set_color(make_colour_rgb(0,0,0))
         draw_set_alpha(alpha) 
-        draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)	
+        	
+        draw_sprite_stretched(spr_fundo_caixa, 0, _x - 65, _y - 50, 65, 80)
+        //draw_rectangle(_x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, false)
+        draw_sprite_stretched(spr_escolhas, 0, _x - 65, _y - 50, 65, 80)
+        //draw_sprite_stretched(spr_caixa, 0, _x - 65, _y - 50, 65, 80)
+        //draw_sprite_ext(spr_quadro, 0, _x - 60, _y - 50, (_x + 55) - 55,(_y + 65) - 50, 0, c_white, alpha)
         draw_set_color(make_colour_rgb(255,255,255))
         draw_set_alpha(1)
     }
@@ -298,13 +303,137 @@ if _info.is_hero
     {
 		
         case 0:
-			acao_realizada = "escolhendo_ataque"
+			acao_realizada ="escolhendo_ataque"
 			global.alvos = true
         break;
+        
+        case 2:
+            acao_realizada = "escolhendo_itens"
+        break;        
 		
     }
 	}
 }
+
+#region Itens
+
+//Usando Itens
+usa_itens = function()
+{
+    if (round_finalizado) return;
+
+    var atual = turnos[0];
+    
+   
+if (atual.morto || atual.controla_vida.vida <= 0)
+    {
+    // remove ele da lista e pula turno
+        controlando_vida();
+        remove_mortos();
+
+        turnos = ordena_val(global.batalha);
+        return;
+    }
+    
+    
+    if atual.is_hero
+		{
+  			
+            
+            
+            var item = global.itens[acao_atual]
+            switch (item.nome) {
+            	case "Cura":
+                    
+                    //var  _cura = item.valor
+			var _qtd = array_length(global.herois) 
+			
+			for (i = 0; i < _qtd; i++)
+			{
+                
+				var x_alvo = global.herois[i].heroi.x
+				var y_alvo = global.herois[i].heroi.y
+				var temp  = instance_create_layer(x_alvo-20, y_alvo-20,"Instances", obj_cura)
+				
+				cura = ((50/100) * item.valor)
+				temp.txtCura = cura
+				temp.cor = c_green
+				temp.depth = depth - 1
+				global.herois[i].controla_vida.ganha_vida(cura)
+            }
+                break    
+            case "Manah":
+                    show_message("mais mana")
+                break    
+            case "Dano":
+                    show_message("Dano aumentado")
+                break    
+            }
+            
+            
+            
+            if global.true_mana == true
+            {
+                atual.vel_atual = 0;
+                global.true_mana = false
+            }
+           
+            
+            
+            controlando_vida(); // só marca morto = true
+            
+            remove_mortos()
+            //array_delete(turnos, 0, 1);
+            //array_push(turnos, atual);
+            // reordena por velocidade 
+            turnos = ordena_val(turnos);    
+            //;
+
+	   }
+
+    
+    //show_message(_info.vel_atual)
+} 
+
+
+desenha_itens = function()
+{
+    var info = turnos[0]
+    draw_set_font(fnt_ataques)
+    var _itens = global.itens
+    var _qtd = array_length(_itens)
+    for (i = 0; i < _qtd; i++)
+    {
+        var _cor = c_white
+		var _marg = 0
+		//Definindo posicão
+		var _x = 0
+        var _y = 0
+        
+        if instance_exists(info.heroi) && info.is_hero != false
+        {    
+		  _x = info.heroi.x//175 + i * 65;
+		  _y = info.heroi.y + i * 15;
+        }    
+        
+        
+        if acao_atual == i
+		{
+			_cor = c_red	
+			_marg = 5
+		}
+        
+        draw_set_color(_cor)
+		draw_text((_x - 60) + _marg, (_y - 50), global.itens[i].nome)
+        
+    }
+    
+    draw_set_color(-1)
+		draw_set_font(-1)
+}
+#endregion
+
+
 
 
 //EXECUTA AS AÇÕES DOS PERSONAGENS
@@ -320,7 +449,7 @@ executa_habilidades = function()
     
    
 
-    if (atual.morto || atual.controla_vida.vida <= 0)
+     if (atual.morto || atual.controla_vida.vida <= 0)
     {
     // remove ele da lista e pula turno
         controlando_vida();
@@ -329,6 +458,7 @@ executa_habilidades = function()
         turnos = ordena_val(global.batalha);
         return;
     }
+	
 	
 if atual.is_hero
 		{
@@ -460,7 +590,6 @@ desenha_inimigo = function(_lista)
 }
 	
 	
-
 controlando_vida = function()
 {
     for (var i = 0; i < array_length(global.batalha); i++)
@@ -629,3 +758,4 @@ vizualiza_alvo = function()
  //ORDENANDO TURNOS
  //APARTIR DA MINHA FUNÇÃO DE ORDENAÇÃO NO SCRIPT
 turnos = ordena_val(global.batalha)
+

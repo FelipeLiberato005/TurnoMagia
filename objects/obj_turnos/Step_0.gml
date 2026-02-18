@@ -45,6 +45,18 @@ if acao_realizada == "escolhendo_ataque"
 #endregion
 
 
+#region Escolhendo itens
+
+if acao_realizada == "escolhendo_itens"
+{
+            
+			var item_escolhido = global.itens
+			muda_acao(item_escolhido)
+}
+
+
+#endregion
+
 //Fazendo um Cronometro para ativar o executa_acao
 #region Mudando para executa_acao()
 
@@ -91,6 +103,7 @@ if _info.is_hero
 		}
 		
 	}	
+    
 }
 
 else if _info.is_hero == false && global.trava == true
@@ -101,7 +114,20 @@ else if _info.is_hero == false && global.trava == true
 }
 #endregion
 
-//
+
+if acao_realizada == "escolhendo_itens"
+    {
+        if (keyboard_check_pressed(vk_enter)  && global.trava == true)
+		{ 
+        global.true_mana = true
+        global.trava = false
+        usa_itens()
+        acao_realizada = "escolhendo_acao"
+        acao_atual = 0
+        alpha = 0
+    }
+        }
+
 
 #region finaliza round
 //SE A VARIAVEL round_finalizado FOR TRUE, OU SEJA, TODOS AS INSTANCIAS ATACARAM

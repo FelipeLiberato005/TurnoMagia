@@ -102,7 +102,7 @@ spr_rich_atack,
 spr_rich_idle,
 ,
 ,
-80
+25
 )
 array_push(maga.acoes, "magia")
 array_push(maga.tipo_ataques,
@@ -121,7 +121,7 @@ spr_arqueira_ataque,
 spr_arqueira_idle,
 ,
 ,
-75 
+30 
 )
 array_push(arqueira.acoes, "ataque")
 array_push(arqueira.tipo_ataques,
@@ -261,7 +261,7 @@ spr_corvo_atack,
 spr_corvo,
 noone,
 false,
-20
+25
 )
 array_push(_inimigo1.acoes, "ataque");
 array_push(_inimigo1.tipo_ataques,
