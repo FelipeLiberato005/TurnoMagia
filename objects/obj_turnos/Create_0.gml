@@ -219,6 +219,7 @@ desenha_batalha = function(_lista)
 		var x_personagem = _info.heroi.x
 		var y_personagem = _info.heroi.y
 		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white)
+        //draw_text(x_personagem, y_personagem - 50, _info.dano_atual)
 	}
 	draw_set_font(-1)
 }
@@ -343,11 +344,18 @@ if (atual.morto || atual.controla_vida.vida <= 0)
             
             var item = global.itens[acao_atual]
             switch (item.nome) {
+                
+                
+            #region Cura
+                
             	case "Cura":
                     
                     //var  _cura = item.valor
 			var _qtd = array_length(global.herois) 
-			
+			var usuario = turnos[0]
+                    
+        if item.quantidade > 0
+        {            
 			for (i = 0; i < _qtd; i++)
 			{
                 
@@ -360,19 +368,9 @@ if (atual.morto || atual.controla_vida.vida <= 0)
 				temp.cor = c_green
 				temp.depth = depth - 1
 				global.herois[i].controla_vida.ganha_vida(cura)
-            }
-                break    
-            case "Manah":
-                    show_message("mais mana")
-                break    
-            case "Dano":
-                    show_message("Dano aumentado")
-                break    
-            }
-            
-            
-            
-            if global.true_mana == true
+                
+                
+                if global.true_mana == true
             {
                 atual.vel_atual = 0;
                 global.true_mana = false
@@ -380,19 +378,114 @@ if (atual.morto || atual.controla_vida.vida <= 0)
            
             
             
-            controlando_vida(); // só marca morto = true
+            controlando_vida(); 
             
             remove_mortos()
-            //array_delete(turnos, 0, 1);
-            //array_push(turnos, atual);
-            // reordena por velocidade 
+            
             turnos = ordena_val(turnos);    
             //;
 
+                //
+            }
+                    item.quantidade --;
+        }
+        else 
+        {
+            var x_alvo = usuario.heroi.x 
+            var y_alvo = usuario.heroi.y
+            var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+            temp.txtCura = "Itens Insuficientes! "
+            temp.sinal = " "
+        }            
+          #endregion            
+                    
+                break    
+            
+            #region Mana
+            
+            case "Manah":
+                    
+                var usuario = turnos[0]
+                if item.quantidade > 0
+                {
+                    obj_player.mana = obj_player.mana + item.valor
+                
+                     if global.true_mana == true 
+                    {
+                        atual.vel_atual = 0;
+                        global.true_mana = false
+                    }
+                     
+                    
+                controlando_vida(); 
+            
+                remove_mortos()
+            
+                turnos = ordena_val(turnos); 
+                    
+                    item.quantidade --;
+                }
+                else {
+                	var x_alvo = usuario.heroi.x 
+                    var y_alvo = usuario.heroi.y
+                    var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+                    temp.txtCura = "Itens Insuficientes! "
+                    temp.sinal = " "
+                }
+                
+             #endregion
+                break  
+            
+            
+            #region Dano
+            case "Dano":
+                     var info = array_length(global.herois)
+                     var usuario = turnos[0]
+                if item.quantidade > 0
+                { 
+                    for (var i = 0; i < info; i++)
+                    {
+                        var personagem =  global.herois[i]
+                        
+                        var x_alvo = global.herois[i].heroi.x
+				        var y_alvo = global.herois[i].heroi.y
+				        var temp  = instance_create_layer(x_alvo-20, y_alvo-20,"Instances", obj_cura)
+				
+				        temp.cor = c_red
+                        var _valor = 50/100 * item.valor
+                        temp.txtCura = _valor
+				        global.herois[i].dano_atual += _valor
+                        
+                        
+                        if global.true_mana == true 
+                    {
+                        atual.vel_atual = 0;
+                        global.true_mana = false
+                    }
+                     
+                    
+                        controlando_vida(); 
+            
+                        remove_mortos()
+            
+                        turnos = ordena_val(turnos); 
+                    }
+                        item.quantidade--
+                }
+                else 
+                {
+                    var x_alvo = usuario.heroi.x 
+                    var y_alvo = usuario.heroi.y
+                    var temp  = instance_create_layer(x_alvo+20, y_alvo-30,"Instances", obj_cura)
+                    temp.txtCura = "Itens Insuficientes! "
+                    temp.sinal = " "
+                }
+                
+            #endregion  
+                break    
+            }
+            
 	   }
-
-    
-    //show_message(_info.vel_atual)
 } 
 
 
@@ -425,6 +518,7 @@ desenha_itens = function()
         
         draw_set_color(_cor)
 		draw_text((_x - 60) + _marg, (_y - 50), global.itens[i].nome)
+        draw_text((_x - 20) + _marg, (_y - 50), "("+string(global.itens[i].quantidade)+")")
         
     }
     
@@ -731,13 +825,17 @@ vizualiza_alvo = function()
 {
     var a = alvo_atual;
     //draw_set_color(c_red);
-    draw_rectangle(
-        a.heroi.x - 16,
-        a.heroi.y - 16,
-        a.heroi.x + 16,
-        a.heroi.y + 16,
-        false
-    );
+    var _x = a.heroi.x - 5
+    var _y = a.heroi.y - 50
+    
+    draw_sprite_ext(spr_marca_inimigo, 0, _x, _y, 1, 1, 0, c_white, 1)
+    //draw_rectangle(
+        //a.heroi.x - 16,
+        //a.heroi.y - 16,
+        //a.heroi.x + 16,
+        //a.heroi.y + 16,
+        //false
+    //);
 }
 }
 #endregion ---Alvos
@@ -759,3 +857,4 @@ vizualiza_alvo = function()
  //APARTIR DA MINHA FUNÇÃO DE ORDENAÇÃO NO SCRIPT
 turnos = ordena_val(global.batalha)
 
+ 

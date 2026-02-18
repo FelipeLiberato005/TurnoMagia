@@ -116,7 +116,10 @@ gpu_set_stencil_enable(false)
 		
 }
 
-
+function tira_item(item)
+{
+   
+}
 
 
 function ativar_stencil_enemy(_heroi)

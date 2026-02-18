@@ -47,7 +47,6 @@ desenha_mochila = function()
     draw_set_font(-1)
 }
 
-pega_itens()
 
 abrir_inve = function()
 {
@@ -57,3 +56,23 @@ abrir_inve = function()
 }
 }
 
+
+deleta_item = function()
+{
+    var qtd = array_length(global.itens)
+    for (var i = 0; i < qtd; i++)
+    {
+        var item = global.itens[i]
+           if item.quantidade <= 0
+        {
+            show_message("acabou!")
+            show_message(global.itens)
+            array_delete(global.itens, i, 0)
+            exit
+        }
+    }
+    
+}
+
+
+//oshow_debug_message(global.itens)

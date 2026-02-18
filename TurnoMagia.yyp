@@ -113,6 +113,7 @@
     {"id":{"name":"spr_luce_atack","path":"sprites/spr_luce_atack/spr_luce_atack.yy",},},
     {"id":{"name":"spr_luce_idle","path":"sprites/spr_luce_idle/spr_luce_idle.yy",},},
     {"id":{"name":"spr_maga_atack","path":"sprites/spr_maga_atack/spr_maga_atack.yy",},},
+    {"id":{"name":"spr_marca_inimigo","path":"sprites/spr_marca_inimigo/spr_marca_inimigo.yy",},},
     {"id":{"name":"spr_mochila","path":"sprites/spr_mochila/spr_mochila.yy",},},
     {"id":{"name":"spr_nyah_atack","path":"sprites/spr_nyah_atack/spr_nyah_atack.yy",},},
     {"id":{"name":"spr_nyah_idle","path":"sprites/spr_nyah_idle/spr_nyah_idle.yy",},},
