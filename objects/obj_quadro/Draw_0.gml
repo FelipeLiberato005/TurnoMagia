@@ -1,1 +1,0 @@
-desenha_quadro_escolhas()

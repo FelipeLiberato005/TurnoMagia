@@ -1,6 +1,6 @@
 
 function cria_personagem(_nome, 
-						 _spr, 
+						 _spr,
 						 _vida = 0, 
 						 _mana = 0, 
 						 _vel,
@@ -8,7 +8,9 @@ function cria_personagem(_nome,
 						 _idle,
 						 _cura,
 						 _hero = true,
-						 _dano
+						 _dano,
+                         _escudo = 100,
+                        _projetil = obj_projetil_teste
 						) 
 						 constructor
 {
@@ -16,6 +18,10 @@ function cria_personagem(_nome,
 	nome = _nome;
 	heroi = _spr
 	
+    escudo_base = _escudo
+    controla_escudo = new scr_escudo(escudo_base)
+    
+    
 	vida_base = _vida;
 	//vida_atual = _vida;
 	controla_vida = new scr_vida(vida_base);
@@ -31,6 +37,8 @@ function cria_personagem(_nome,
 	dano_atual = _dano
 	dano_base = _dano
 	
+    projetil = _projetil
+    
 	//acoes que o personagem pode usar
 	acoes = []
 	
@@ -97,16 +105,18 @@ var maga = new cria_personagem(
 obj_maga,
 150,
 100,
-28,
+20,
 spr_rich_atack,
 spr_rich_idle,
 ,
 ,
-25
+25,
+
 )
 array_push(maga.acoes, "magia")
 array_push(maga.tipo_ataques,
-            {nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
+            {nome: "ATK", tipo: "ataque", valor: 0, mana: 0},
+            {nome: "Area", tipo: "dano_raio", valor: 30, mana: 0})
 #endregion
 
 #region Arqueira
@@ -121,7 +131,8 @@ spr_arqueira_ataque,
 spr_arqueira_idle,
 ,
 ,
-30 
+30,
+
 )
 array_push(arqueira.acoes, "ataque")
 array_push(arqueira.tipo_ataques,
@@ -142,7 +153,8 @@ spr_maga_atack,
 spr_strelizia,
 ,
 ,
-20
+20,
+
 )
 array_push(_char1.acoes, "magia");
 array_push(_char1.tipo_ataques, 
@@ -160,7 +172,8 @@ spr_clone_ataque,
 spr_strelizia_2,
 ,
 ,
-25
+25,
+
 )
 array_push(_char2.acoes, "magia");
 array_push(_char2.tipo_ataques, 
@@ -178,7 +191,8 @@ spr_slime_atack,
 spr_gosma,
 ,
 false,
-30
+30,
+
 ) 
 array_push(_char3.acoes, "ataque");
 array_push(_char3.tipo_ataques, 
@@ -196,7 +210,7 @@ spr_luce_atack,
 spr_luce_idle,
 ,
 ,
-30
+30,
 
 )
 array_push(_luce.acoes, "ataque")
@@ -218,17 +232,18 @@ noone,
 spr_lili_idle,
 spr_lili_healer,
 ,
-20
+20,
+
 ) 
 array_push(_lilli.acoes, "magia")
 array_push(_lilli.tipo_ataques,
-		{nome: "Cura", tipo: "cura", valor: 50, mana: 60},
+		{nome: "Cura", tipo: "cura", valor: 50, mana: 0},
 		{nome: "+DMG", tipo: "buff", valor: 10, mana: 40},
 		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0}
 );
 #endregion
 
-#region     Lica
+#region     LICA
 
 var _lica = new cria_personagem(
     "Lica",
@@ -248,6 +263,27 @@ array_push(_lica.tipo_ataques,
 		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0})
 
 #endregion
+
+#region Léia
+var _leia = new cria_personagem(
+"Léia",
+obj_leia,
+160,
+100,
+39,
+spr_leia_atack,
+spr_leia_idle,
+,
+,
+30,
+,
+obj_projetil_leia
+)
+array_push(_leia.acoes, "magia");
+array_push(_leia.tipo_ataques,
+		{nome: "ATK", tipo: "ataque", valor: 0, mana: 0},
+        {nome: "ESD", tipo: "escudo", valor: 40, mana: 0})
+#endregion 
 
 //INIMIGOS
 #region CORVO
@@ -342,6 +378,7 @@ array_push(lica_enemy.tipo_ataques,
             {nome: "ATK", tipo: "ataque", valor: 0})
 #endregion 
 
+
 global.personagens = [_char1, 
 _char2, 
 _char3, 
@@ -355,7 +392,8 @@ nyah,
 lica_enemy,
 maga,
 arqueira,
-_char1]
+_char1,
+_leia]
      
 
 
@@ -367,7 +405,8 @@ global.escolhas_player = [
     _lica,
     maga,
     arqueira,
-    _luce
+    _luce,
+    _leia
 ]
 
 	 

@@ -109,6 +109,10 @@ escolhendo_personagem = function()
         case 6:
             controla_lista_player()
         break    
+    
+        case 7:
+            controla_lista_player()
+        break;    
     }
 }
 

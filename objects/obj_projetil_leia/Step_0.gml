@@ -1,0 +1,2 @@
+destruindo_projetil()
+

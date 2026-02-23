@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Maga",
-    "path":"folders/Sprites/Personagens_Final/Maga.yy",
+    "name":"outline",
+    "path":"folders/Sprites/Personagens_Final/Maga/outline.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -4,6 +4,7 @@
 reseta_turno(global.batalha)
 #endregion
 
+
 #region condição temporizador
 //CONDIÇAÕ QUE CONTROLA O TEMPORIZADOR
 //QUANDO O CRONOMETRO CHEGA NO VALOR DO TEMPO ESTIPULADO

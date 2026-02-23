@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_cavaleiro_atack",
   "bboxMode":0,
-  "bbox_bottom":90,
+  "bbox_bottom":59,
   "bbox_left":0,
-  "bbox_right":58,
+  "bbox_right":54,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,30 +12,19 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"86c3558f-0a1e-4c31-8bfd-1e2ae8236f3a","name":"86c3558f-0a1e-4c31-8bfd-1e2ae8236f3a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"ddd466fd-ab79-4c58-9e68-e97b2d8bca45","name":"ddd466fd-ab79-4c58-9e68-e97b2d8bca45","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"2d9e6852-2fa7-4218-88ce-7279538ad42c","name":"2d9e6852-2fa7-4218-88ce-7279538ad42c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"b755544d-ac85-4e17-b3a1-d217e6603659","name":"b755544d-ac85-4e17-b3a1-d217e6603659","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"a5933eee-2f9a-4f1d-b653-4b76c7f6f1ea","name":"a5933eee-2f9a-4f1d-b653-4b76c7f6f1ea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"395da4f3-d2e7-4c7e-bc72-a1a067ccb2b8","name":"395da4f3-d2e7-4c7e-bc72-a1a067ccb2b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"87a74cae-2629-4fc9-90c2-087525a2774c","name":"87a74cae-2629-4fc9-90c2-087525a2774c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"e299acd9-1b60-46d1-b2a9-1229043f8dd0","name":"e299acd9-1b60-46d1-b2a9-1229043f8dd0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"c82d5a32-5995-4884-b3d2-4e6ddfd7767f","name":"c82d5a32-5995-4884-b3d2-4e6ddfd7767f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"4af03658-1baa-40de-a981-123e40045705","name":"4af03658-1baa-40de-a981-123e40045705","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"fd0ac417-c12a-4f38-9ee1-d0e4faed8d46","name":"fd0ac417-c12a-4f38-9ee1-d0e4faed8d46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"7ab6b588-23aa-47aa-aaf8-f0cd458a79ad","name":"7ab6b588-23aa-47aa-aaf8-f0cd458a79ad","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"ea46a3a5-2c21-4be0-b90f-c3fb21f4ff13","name":"ea46a3a5-2c21-4be0-b90f-c3fb21f4ff13","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"30b6d2f3-1378-4c73-8622-19310654878b","name":"30b6d2f3-1378-4c73-8622-19310654878b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"92e8c471-0c26-4948-b2cb-61046e5a9bae","name":"92e8c471-0c26-4948-b2cb-61046e5a9bae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"667f0189-b13c-4423-9b13-497c148e1f83","name":"667f0189-b13c-4423-9b13-497c148e1f83","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"8626e492-e396-42f4-9495-3bc61a284237","name":"8626e492-e396-42f4-9495-3bc61a284237","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"428a4aa1-9e19-4ecd-9f5a-b051e6dd388a","name":"428a4aa1-9e19-4ecd-9f5a-b051e6dd388a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ede37ed6-8efe-47b3-a900-dd5129e994f3","name":"ede37ed6-8efe-47b3-a900-dd5129e994f3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6883c33c-6bd5-4f4a-bd39-a24b650d8baa","name":"6883c33c-6bd5-4f4a-bd39-a24b650d8baa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"83394305-0775-42e0-83d6-780a00e58e22","name":"83394305-0775-42e0-83d6-780a00e58e22","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"215ce120-bf4d-4786-94f4-d77604f7422e","name":"215ce120-bf4d-4786-94f4-d77604f7422e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b9f0cfea-1131-45a5-b818-5d67bd5ef4bd","name":"b9f0cfea-1131-45a5-b818-5d67bd5ef4bd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":91,
+  "height":60,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"51948641-f5bf-4395-9749-1dbe98b7cd87","blendMode":0,"displayName":"default","isLocked":false,"name":"51948641-f5bf-4395-9749-1dbe98b7cd87","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"7f4a180e-7737-4bd6-a29b-cb200edd194f","blendMode":0,"displayName":"default","isLocked":false,"name":"7f4a180e-7737-4bd6-a29b-cb200edd194f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_cavaleiro_atack",
   "nineSlice":null,
@@ -65,7 +54,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":17.0,
+    "length":6.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -85,62 +74,29 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"86c3558f-0a1e-4c31-8bfd-1e2ae8236f3a","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"38cc3744-a023-444c-8f5f-d82f9cbc72cf","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"428a4aa1-9e19-4ecd-9f5a-b051e6dd388a","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"16ee46ab-ec83-4dac-9c39-5d07ec381789","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ddd466fd-ab79-4c58-9e68-e97b2d8bca45","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0be33d3e-5d99-4207-a336-580196feb347","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ede37ed6-8efe-47b3-a900-dd5129e994f3","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a4c294ba-d4cf-4441-a640-d6ee666bdf75","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2d9e6852-2fa7-4218-88ce-7279538ad42c","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b7adf7a8-3eb5-4b62-8e66-2777f40e309c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6883c33c-6bd5-4f4a-bd39-a24b650d8baa","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2026636b-c790-4927-8742-e7818f6e72b9","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b755544d-ac85-4e17-b3a1-d217e6603659","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bcb13d1d-45eb-4909-92cc-0b7361dcf82d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"83394305-0775-42e0-83d6-780a00e58e22","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"603c2bfd-fbca-4ba5-97eb-85debbacef55","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a5933eee-2f9a-4f1d-b653-4b76c7f6f1ea","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3bd7b656-c3ab-47a0-b935-ebce8d9e49e6","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"215ce120-bf4d-4786-94f4-d77604f7422e","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"94ff61df-02c3-43b0-8f7b-1caa0031d8d7","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"395da4f3-d2e7-4c7e-bc72-a1a067ccb2b8","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ab2d4614-e976-402d-8a99-91704f522728","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"87a74cae-2629-4fc9-90c2-087525a2774c","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"05d80aca-621c-4f5c-90ef-cf8f4bfd1cef","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e299acd9-1b60-46d1-b2a9-1229043f8dd0","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"30f10468-0bc0-43a5-a909-4ead0e2587fe","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c82d5a32-5995-4884-b3d2-4e6ddfd7767f","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"44beb2a4-793f-474f-bdf7-26d0040f6e9f","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4af03658-1baa-40de-a981-123e40045705","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5c5ad293-4685-4b4e-b556-8ed4795d828a","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd0ac417-c12a-4f38-9ee1-d0e4faed8d46","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4a4c98fe-36f5-4d61-b2a7-a2047c114b8d","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7ab6b588-23aa-47aa-aaf8-f0cd458a79ad","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b37e759f-cd3e-4f79-af0e-6883f849bf3b","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ea46a3a5-2c21-4be0-b90f-c3fb21f4ff13","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8bce18f4-c5a8-434a-b8c3-06ff906300e7","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"30b6d2f3-1378-4c73-8622-19310654878b","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9b804b98-021b-4166-b768-e51288cb89fc","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"92e8c471-0c26-4948-b2cb-61046e5a9bae","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"87d72316-bb77-472f-80dc-cf3e4a74d372","IsCreationKey":false,"Key":14.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"667f0189-b13c-4423-9b13-497c148e1f83","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"836f3aea-4049-40e2-bc9e-37f5143d2570","IsCreationKey":false,"Key":15.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8626e492-e396-42f4-9495-3bc61a284237","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ed3d7938-2937-4b85-9bd7-6785bfc82bf5","IsCreationKey":false,"Key":16.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b9f0cfea-1131-45a5-b818-5d67bd5ef4bd","path":"sprites/spr_cavaleiro_atack/spr_cavaleiro_atack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"47fb3b39-4b9a-4e79-8035-a898642b018e","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":29,
-    "yorigin":45,
+    "xorigin":27,
+    "yorigin":30,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -150,5 +106,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":59,
+  "width":55,
 }

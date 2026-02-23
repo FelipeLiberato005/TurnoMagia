@@ -215,15 +215,36 @@ desenha_batalha = function(_lista)
 			}
 		
 			
-		
+		var _cinza = make_colour_rgb(100, 100, 100)
 		var x_personagem = _info.heroi.x
 		var y_personagem = _info.heroi.y
-		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white)
+		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white, false)
+        _info.controla_escudo.desenha_escudo(x_personagem - 8, y_personagem - 25, 20, 2, c_grey, _cinza, c_white, false)
+        
         //draw_text(x_personagem, y_personagem - 50, _info.dano_atual)
 	}
 	draw_set_font(-1)
 }
 
+desenha_mana = function()
+{
+    var batalha = array_length(global.herois)
+    for (var i = 0; i < batalha; i++)
+    {
+        var info = global.herois[i]
+        
+        //var _x = info.heroi.x
+        //var _y = info.heroi.y
+        //var azul = make_colour_rgb(0, 0, 230)
+        //draw_rectangle_colour(_x + 14, _y - 30, _x - 10, _y - 24, c_white, c_white, c_white, c_white,false)
+        //draw_rectangle_colour(_x + 12, _y - 28, _x - 8, _y - 26, azul, azul, azul, azul,false)
+        
+        var _x = 50
+        var _y = 100 + (i * 50)
+        
+       // draw_sprite_ext(spr_vida_mana, 0, _x, _y, 1, 1, 0, c_white, 1)
+    }
+}
 
 fim_partida = function()
 {
@@ -233,7 +254,7 @@ fim_partida = function()
     if inimigo <= 0
     {
         show_message("Fim da Partida!")
-        game_end()
+        room_goto(rm_inicio)
     }
     
     
@@ -241,7 +262,7 @@ fim_partida = function()
     if aliado <= 0
     {
         show_message("Fim da Partida!")
-        game_end()
+        room_goto(rm_inicio)
     }
     
     
@@ -672,10 +693,11 @@ desenha_inimigo = function(_lista)
 		}
 		
 		 
-		
+		var _cinza = make_colour_rgb(100, 100, 100)
 		var x_personagem = _info.heroi.x
 		var y_personagem = _info.heroi.y
 		_info.controla_vida.desenha_vida(x_personagem - 8 , y_personagem - 20, 20, 2, c_green, c_red,c_white)
+        _info.controla_escudo.desenha_escudo(x_personagem - 8, y_personagem - 25, 20, 2, c_grey, _cinza, c_white, false)
 
 		
 		
@@ -843,7 +865,15 @@ vizualiza_alvo = function()
  #endregion	
  
  
- 
+ zera_ecudo = function()
+{
+    var _qtd = array_length(global.batalha)
+    for (var i = 0; i < _qtd; i++)
+    {
+        global.batalha[i].controla_escudo.escudo = 0
+    }
+}
+
  ver_estatistica = function()
  {
 	var _info = turnos[0]
@@ -857,4 +887,4 @@ vizualiza_alvo = function()
  //APARTIR DA MINHA FUNÇÃO DE ORDENAÇÃO NO SCRIPT
 turnos = ordena_val(global.batalha)
 
- 
+zera_ecudo()

@@ -33,7 +33,7 @@ if global.trava == true
 //SERÁ DELETADO - 03/01/2026
 if global.alvos == true 	vizualiza_alvo()
 
-
+//desenha_mana()
 //DESENHA O VALOR DO TURNO, EM QUE TURNO O JOGO ESTÁ
 //NADA DE MAIS
 desenha_turno()
